@@ -1,0 +1,17 @@
+---
+title: "htmlwidgets"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(leaflet)
+leaflet() %>%
+setView(174.764, -36.877, zoom = 16) %>%
+addTiles() %>%
+addMarkers(174.764, -36.877, popup = "Maungawhau")
+```
+

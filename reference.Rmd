@@ -1,0 +1,10 @@
+---
+title: "Sample Document"
+output: html_document
+bibliography: test.bib
+csl: Chinese Std.csl
+---
+
+
+ The Ocean Health Index [@halpern_index_2012; @selig_assessing_2013] derives most of its pressures from Halpern et al. [-@halpern_global_2008].
+

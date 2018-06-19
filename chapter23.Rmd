@@ -1,0 +1,20 @@
+---
+title: "在R Markdown文档中使用中文"
+author:
+  - 谢益辉
+  - 邱怡轩
+  - 于淼
+documentclass: ctexart
+output:
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+classoption: "hyperref,"
+---
+
+# 引言
+
+中文LaTeX文档并非难题。当然这句话得站在巨人 [CTeX](http://ctex.org) 的肩膀上才能说，它让我们只需要一句
+
+

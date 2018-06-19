@@ -1,0 +1,49 @@
+---
+title: "chapter21"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+echo = TRUE,
+comment = "#>",
+collapse = TRUE
+)
+```
+
+```{r}
+mtcars[1:5,1:10]
+```
+
+```{r}
+knitr::kable(
+  mtcars[1:5,],
+  caption = 'A knitr kable.'
+)
+```
+
+```{r}
+comma <- function(x) format(x, digits = 2, big.mark = ",")
+```
+```{r}
+rmarkdown::render(
+"fuel-economy.Rmd",
+params = list(my_class = "suv")
+)
+```
+
+```{r}
+reports <- tibble(
+  class=unique(mpg$class),
+  filename=stringr::str_c('fuel-economy-',class,'.html'),
+  params=purrr::map(class,~list(my_class=.))
+)
+
+reports %>% 
+  select(output_file=filename,params) %>% 
+  purrr::pwalk(rmarkdown::render,input='fuel-economy.Rmd')
+```
+
+
